@@ -6,7 +6,7 @@ Restaurant.getAll = async () => {
     console.log("HelloPass1");
     try {
         const restaurants = await Restaurant.findAll({});
-        return restaurants
+        return restaurants.map(restaurant => restaurant.toJSON(restaurants))
     } catch (error) {
         console.log("err", error);
         throw error;
@@ -57,4 +57,6 @@ Restaurant.restaurantupdateid = async (edit,resid) => {
     }
 };
 
+
+//Get all restaurant
 module.exports = Restaurant;
