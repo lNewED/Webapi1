@@ -49,18 +49,6 @@ router.delete("/Food/:id", async (req, res) => {
   }
 });
 
-router.post("/Food", async (req, res) => {
-  try {
-    console.log("Hello")
-    const add = req.body
-    const ShoRestaurant = await Restaurant.createrestaurant(add)
-    res.status(201).json(ShoRestaurant)
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ error: "Failed to Show Restaurant" })
-  }
-});
-
 router.put("/Food/:id", async (req, res) => {
   try {
     console.log("Hello")
@@ -73,7 +61,5 @@ router.put("/Food/:id", async (req, res) => {
     res.status(500).json({ error: "Failed to Show Restaurant" })
   }
 });
-
-
 
 module.exports = router;
